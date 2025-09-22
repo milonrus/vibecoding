@@ -193,8 +193,8 @@ export default function Home() {
             <h2>About Us</h2>
             <div className="about-content">
               <div className="about-text">
-                <p>Welcome to Not a Tourist, where authentic coffee culture meets the stunning coastal beauty of Budva. We're not just another coffee shop – we're a local sanctuary for coffee enthusiasts who appreciate the art of specialty brewing.</p>
-                <p>Our carefully curated beans are sourced from sustainable farms around the world, roasted to perfection, and crafted by passionate baristas who understand that great coffee is more than just a beverage – it's an experience.</p>
+                <p>Welcome to Not a Tourist, where authentic coffee culture meets the stunning coastal beauty of Budva. We&apos;re not just another coffee shop – we&apos;re a local sanctuary for coffee enthusiasts who appreciate the art of specialty brewing.</p>
+                <p>Our carefully curated beans are sourced from sustainable farms around the world, roasted to perfection, and crafted by passionate baristas who understand that great coffee is more than just a beverage – it&apos;s an experience.</p>
                 <p>Step away from the tourist trail and discover what locals have known all along: the best coffee in Budva is found where authenticity meets excellence.</p>
               </div>
               <div className="coffee-image">
@@ -214,11 +214,11 @@ export default function Home() {
               </div>
               <div className="menu-item floating-element">
                 <h3>Signature Espresso Blends</h3>
-                <p>Our master roaster's carefully crafted blends, perfect for espresso, cappuccino, and flat white. Rich, balanced, and unforgettable.</p>
+                <p>Our master roaster&apos;s carefully crafted blends, perfect for espresso, cappuccino, and flat white. Rich, balanced, and unforgettable.</p>
               </div>
               <div className="menu-item floating-element">
                 <h3>Cold Brew & Nitro</h3>
-                <p>Smooth, refreshing cold brew and creamy nitro coffee – perfect for Budva's warm Mediterranean climate.</p>
+                <p>Smooth, refreshing cold brew and creamy nitro coffee – perfect for Budva&apos;s warm Mediterranean climate.</p>
               </div>
               <div className="menu-item floating-element">
                 <h3>Local Pastries</h3>

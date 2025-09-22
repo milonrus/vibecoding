@@ -25,7 +25,7 @@ interface Comment {
     uid: string;
   };
   likes: string[];
-  createdAt: any;
+  createdAt: Date | null;
 }
 
 interface CommentsSectionProps {
@@ -98,10 +98,12 @@ export default function CommentsSection({ onOpenAuth }: CommentsSectionProps) {
     }
   };
 
-  const formatDate = (timestamp: any) => {
+  const formatDate = (timestamp: Date | null | { toDate?: () => Date }) => {
     if (!timestamp) return 'Just now';
 
-    const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+    const date = timestamp && typeof timestamp === 'object' && 'toDate' in timestamp && timestamp.toDate ?
+      timestamp.toDate() :
+      timestamp instanceof Date ? timestamp : new Date();
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',

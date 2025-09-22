@@ -18,7 +18,7 @@ interface Message {
   id: string;
   text: string;
   role: 'user' | 'ai';
-  timestamp: any;
+  timestamp: Date | null;
 }
 
 export default function ChatPage() {
@@ -196,9 +196,9 @@ export default function ChatPage() {
             {messages.length === 0 && (
               <div className="message ai">
                 <div>
-                  Welcome to Not a Tourist's AI Coffee Consultant! ☕<br/><br/>
-                  I'm here to help you discover the perfect coffee for your taste preferences.
-                  Whether you're looking for something bold and rich, light and fruity, or
+                  Welcome to Not a Tourist&apos;s AI Coffee Consultant! ☕<br/><br/>
+                  I&apos;m here to help you discover the perfect coffee for your taste preferences.
+                  Whether you&apos;re looking for something bold and rich, light and fruity, or
                   somewhere in between, I can guide you to your ideal cup.<br/><br/>
                   What kind of coffee experience are you looking for today?
                 </div>

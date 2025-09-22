@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
 
@@ -10,13 +9,10 @@ interface NavigationProps {
 
 export default function Navigation({ onOpenAuth }: NavigationProps) {
   const { user, logout } = useAuth();
-  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const handleAuthClick = () => {
     if (onOpenAuth) {
       onOpenAuth();
-    } else {
-      setShowAuthModal(true);
     }
   };
 
