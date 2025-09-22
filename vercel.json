@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd coffee-chat && npm run build",
+  "outputDirectory": "coffee-chat/.next",
+  "installCommand": "cd coffee-chat && npm install"
+}
