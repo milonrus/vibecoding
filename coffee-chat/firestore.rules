@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Comments collection - users can read all, but only write their own
+    match /comments/{commentId} {
+      allow read: if true;
+      allow create: if request.auth != null
+        && request.auth.uid == resource.data.author.uid;
+      allow update: if request.auth != null
+        && (
+          // Author can update their own comment
+          request.auth.uid == resource.data.author.uid
+          // Anyone can update likes array (for like/unlike functionality)
+          || onlyLikesChanged()
+        );
+      allow delete: if request.auth != null
+        && request.auth.uid == resource.data.author.uid;
+    }
+
+    // Chat messages - users can only access their own messages
+    match /chatMessages/{messageId} {
+      allow read, write: if request.auth != null
+        && request.auth.uid == resource.data.userId;
+    }
+
+    // Helper function to check if only likes array was changed
+    function onlyLikesChanged() {
+      return request.resource.data.diff(resource.data).affectedKeys() == ['likes'].toSet();
+    }
+  }
+}
